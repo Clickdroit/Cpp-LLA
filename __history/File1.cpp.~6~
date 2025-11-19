@@ -3,7 +3,6 @@
 #include <string>
 #include "IRClientTCP.h"
 #include <windows.h>
-#include "IRJSONExtraction.h"
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])

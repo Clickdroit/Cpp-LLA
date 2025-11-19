@@ -124,6 +124,12 @@
         <CppCompile Include="File1.cpp">
             <BuildOrder>1</BuildOrder>
         </CppCompile>
+        <CppCompile Include="IRClientTCP.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <None Include="IRClientTCP.h">
+            <BuildOrder>3</BuildOrder>
+        </None>
         <PCHCompile Include="Project1PCH1.h">
             <BuildOrder>0</BuildOrder>
             <PCH>true</PCH>

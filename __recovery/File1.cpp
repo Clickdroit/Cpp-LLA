@@ -3,6 +3,7 @@
 #include <string>
 #include "IRClientTCP.h"
 #include <windows.h>
+#include "IRJSONExtraction.h"
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -11,23 +12,25 @@ int _tmain(int argc, _TCHAR* argv[])
     string requete="GET /api/F163AB8D21/sensors HTTP/1.1\r\nHost: 172.20.21.230\r\nConnection: keep-alive\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36\r\nContent-Type: application/json\r\nAccept: */*\r\n\r\n";
     passerelleDomotic.SeConnecterAUnServeur("172.20.21.230",80);
     passerelleDomotic.Envoyer(requete.c_str(),requete.length());
+
     string reponseString = "";
     int n = 0;
     char reponse[1500];
+
     do{
     	n = passerelleDomotic.Recevoir(reponse, 1500);
     	reponseString.append(reponse, n);
     	Sleep(20);
     }
     while( n==1500);
-    //debutDonnee=reponseString.find("\r\n\r\n",0);
 
+    int debutDonnee=reponseString.find("\r\n\r\n",0);
     reponseString= reponseString.substr(debutDonnee);
+
+    IRJSONExtraction = jSON
 
     cout << reponseString << endl;
     cin.get();
-
-
     passerelleDomotic.SeDeconnecter();
 
     return 0;
