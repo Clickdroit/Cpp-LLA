@@ -27,11 +27,18 @@ int _tmain(int argc, _TCHAR* argv[])
     int debutDonnee=reponseString.find("\r\n\r\n",0);
     reponseString= reponseString.substr(debutDonnee);
 
-    IRJSONExtraction = jSON
-
     cout << reponseString << endl;
-    cin.get();
+
     passerelleDomotic.SeDeconnecter();
+
+    IRJSONExtraction jSON;
+
+    jSON.Extraction(reponseString);
+    cout << jSON.Description();
+
+
+
+     cin.get();
 
     return 0;
 
