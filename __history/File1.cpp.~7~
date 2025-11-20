@@ -28,17 +28,8 @@ int _tmain(int argc, _TCHAR* argv[])
     reponseString= reponseString.substr(debutDonnee);
 
     cout << reponseString << endl;
-
+    cin.get();
     passerelleDomotic.SeDeconnecter();
-
-    IRJSONExtraction jSON;
-
-    jSON.Extraction(reponseString);
-    cout << jSON.Description();
-
-
-
-     cin.get();
 
     return 0;
 

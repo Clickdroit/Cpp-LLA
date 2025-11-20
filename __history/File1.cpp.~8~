@@ -37,20 +37,6 @@ int _tmain(int argc, _TCHAR* argv[])
     cout << jSON.Description();
 
 
-    cout << jSON.ValeurAttributNiveau2("name","Temp A7-1","state","temperature") << endl;
-    cout << jSON.ValeurAttributNiveau2("name","Temp A7-1","state","humidity") << endl;
-    cout << jSON.ValeurAttributNiveau2("name","Temp A7-1","state","pressure") << endl;
-    cout << jSON.ValeurAttributNiveau1("name","Temp A7-1", "type")<<endl;
-
-
-    string requetePUT="PUT /api/F163AB8D21/lights/2/state HTTP/1.1\r\nHost: 172.20.21.230\r\nConnection: keep-alive\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36\r\nContent-Type: application/json\r\nAccept: */*\r\n\r\n";
-    string concat;
-    cout << "Saisir la valeur de on: ";
-    concat = "true";
-    requetePUT += "{\"on\":"+concat+",\"bri\":255,\"sat\":100,\"hue\":1000}";
-    passerelleDomotic.SeConnecterAUnServeur("172.20.21.230",80);
-    passerelleDomotic.Envoyer(requetePUT.c_str(),requetePUT.length());
-
 
      cin.get();
 
